@@ -116,7 +116,61 @@ window.fetch = async function(url, options = {}) {
   }
 
   // Hackathons list
-  if (urlStr.includes('/hackathons') || urlStr.includes('/student/hackathons')) {
+  
+  if (urlStr.includes('/student/hackathons/my-hackathons') || urlStr.includes('/student/events')) {
+    return new Response(JSON.stringify({
+      success: true,
+      hackathons: [
+        {
+          id: 'hack_rebuild_26',
+          hackathon_id: 'hack_rebuild_26',
+          code: 'CC-REBUILD-26',
+          title: "ReBuild '26",
+          name: "ReBuild '26",
+          status: 'ONGOING',
+          mode: 'ONLINE',
+          event_mode: 'ONLINE',
+          current_round: 1,
+          start_date: '2026-11-06T08:00:00Z',
+          deadline: '2026-11-06T22:00:00Z',
+          description: "Round 1: Recreate CampusCode user flow faithfully. Submit GitHub link + live demo link.",
+          is_registered: true
+        },
+        {
+          id: 'hack_quiz_2',
+          hackathon_id: 'hack_quiz_2',
+          code: 'CC-QUIZ-2',
+          title: "FirstCommit '26 Quiz Competition 2.0",
+          name: "FirstCommit '26 Quiz Competition 2.0",
+          status: 'UPCOMING',
+          mode: 'ONLINE',
+          event_mode: 'ONLINE',
+          current_round: 1,
+          start_date: '2026-11-10T10:00:00Z',
+          deadline: '2026-11-10T12:00:00Z',
+          description: "Online algorithmic and programming speed quiz competition.",
+          is_registered: true
+        },
+        {
+          id: 'hack_quiz_1',
+          hackathon_id: 'hack_quiz_1',
+          code: 'CC-QUIZ-1',
+          title: "FirstCommit '26 Quiz Competition",
+          name: "FirstCommit '26 Quiz Competition",
+          status: 'COMPLETED',
+          mode: 'ONLINE',
+          event_mode: 'ONLINE',
+          current_round: 3,
+          start_date: '2026-10-15T10:00:00Z',
+          completed_at: '2026-10-15T18:00:00Z',
+          description: "Foundation round programming quiz and code challenges.",
+          is_registered: true
+        }
+      ]
+    }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+  }
+
+  if (urlStr.includes('/hackathons')) {
     return new Response(JSON.stringify({
       success: true,
       hackathons: [
