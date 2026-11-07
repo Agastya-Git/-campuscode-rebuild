@@ -16,7 +16,6 @@ campus-rebuild/
 │   ├── original_runtime.js # Current application runtime and routes
 │   ├── campus-original.css # Theme, page styles, and motion effects
 │   └── scroll-reveal.js    # Scroll-triggered section and card reveals
-├── public/                 # Static assets
 ├── index.html              # App entry point and reviewer quick switcher
 ├── package.json            # Scripts and dependencies
 └── package-lock.json       # Locked dependency versions
@@ -42,14 +41,16 @@ campus-rebuild/
 
 - Role-based organizer and admin routes for event operations and platform management.
 
-## 🎨 Changes from the Original Site
+## 🎨 UI and Design Changes in This Implementation
 
-The original CampusCode site was used as the visual and workflow reference. This Round 2 implementation carries its branding and core public, account, and student experiences into the submission, then extends the student workspace with additional tools and interactions.
+The supplied original-site screenshots show warm off-white pages, large black display type, and purple/lime accents. This implementation uses those screenshots as its visual and workflow reference. The changes below describe the UI refinements in this codebase; the tools listed above describe the current platform, not features newly added in this comparison.
 
-- **Expanded student workspace:** Adds event and registration views, teammate matching, IdeaCheck and RuleBot assistants, certificates, digital ID, notifications, official communication, and profile tools.
-- **Clearer card and form surfaces:** Gives panels, cards, CAPTCHA, password controls, and confirmation boxes a consistent dark navy treatment with readable cream text and CampusCode accent colors.
-- **More motion and feedback:** Adds scroll-triggered fades, staggered cards, animated journey meters, hover feedback, and visible keyboard focus. Reduced-motion settings are respected.
-- **Responsive React/Vite implementation:** Organizes the experience into a runnable app with local development and production build commands.
+- **Student workspace surfaces:** Changed white panels and nested cards across student sections to dark navy surfaces with warm cream text, subtle borders, and CampusCode accent colors for contrast.
+- **Official Communication section:** Restyled its hero panel in navy, improved text contrast, and made the channel label compact.
+- **Login and registration controls:** Restyled password visibility buttons, CAPTCHA displays, the age-confirmation row, and the login status/vehicle panel to fit the dark treatment. The overall authentication card layout remains separate from these control changes.
+- **Section and card motion:** Added scroll-triggered fade and rise effects with staggered timing, plus fades for student content when it changes. Journey bars in **Overview → Your Journey** fill when their card enters view.
+- **Interaction feedback:** Added a subtle card lift and accent border on hover, plus lime keyboard-focus outlines on the landing and student dashboards.
+- **Reduced motion:** Disables reveal, progress, and hover movement when the visitor prefers reduced motion.
 
 ---
 
