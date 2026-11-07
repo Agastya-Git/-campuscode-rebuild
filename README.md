@@ -42,6 +42,15 @@ campus-rebuild/
 
 - Role-based organizer and admin routes for event operations and platform management.
 
+## 🎨 Changes from the Original Site
+
+The original CampusCode site was used as the visual and workflow reference. This Round 2 implementation carries its branding and core public, account, and student experiences into the submission, then extends the student workspace with additional tools and interactions.
+
+- **Expanded student workspace:** Adds event and registration views, teammate matching, IdeaCheck and RuleBot assistants, certificates, digital ID, notifications, official communication, and profile tools.
+- **Clearer card and form surfaces:** Gives panels, cards, CAPTCHA, password controls, and confirmation boxes a consistent dark navy treatment with readable cream text and CampusCode accent colors.
+- **More motion and feedback:** Adds scroll-triggered fades, staggered cards, animated journey meters, hover feedback, and visible keyboard focus. Reduced-motion settings are respected.
+- **Responsive React/Vite implementation:** Organizes the experience into a runnable app with local development and production build commands.
+
 ---
 
 ## 🛠️ Run from GitHub
