@@ -1,0 +1,180 @@
+/* Student Overview: mission first, data second, actions grouped by priority. */
+html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.8fr);
+  align-content: start;
+  align-items: start;
+  gap: 24px;
+  padding: 24px clamp(20px, 3.2vw, 48px) 48px;
+}
+
+html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) > .student-page-heading,
+html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) > .student-hero,
+html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) > .student-stats-grid,
+html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) > .student-two-col {
+  grid-column: 1 / -1;
+  width: 100%;
+  min-width: 0;
+}
+
+html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) > .student-hero {
+  position: relative;
+  min-height: 260px;
+  overflow: hidden;
+  padding: clamp(26px, 4vw, 48px);
+  border: 1px solid rgba(180, 193, 220, 0.28);
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse at 87% 40%, rgba(118, 101, 255, 0.22), transparent 35%),
+    radial-gradient(ellipse at 76% 100%, rgba(168, 230, 46, 0.1), transparent 33%),
+    linear-gradient(120deg, #111a2c 0%, #0b1120 72%);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.24), inset 0 1px rgba(255, 255, 255, 0.06);
+}
+
+html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) .student-hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+
+html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) .student-hero-copy > span {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 14px;
+  padding: 7px 10px;
+  border: 1px solid rgba(168, 230, 46, 0.3);
+  border-radius: 999px;
+  color: #b7ec5b !important;
+  background: rgba(168, 230, 46, 0.08);
+  font: 700 10px/1.2 'DM Mono', monospace;
+  letter-spacing: 0.12em;
+}
+
+html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) .student-hero-copy h2 {
+  max-width: 18ch;
+  margin: 0 0 12px;
+  color: #fffefb !important;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) .student-hero-copy p {
+  max-width: 64ch;
+  color: #d6d8e0 !important;
+  font-size: 15px;
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) .student-hero-avatars {
+  z-index: 0;
+  min-width: 160px;
+  justify-content: center;
+  opacity: 0.9;
+}
+
+html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) > .student-stats-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+
+html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) > .student-dashboard-discover {
+  grid-column: 1;
+  width: 100%;
+  min-width: 0;
+  padding: clamp(18px, 2.2vw, 28px);
+  border: 1px solid rgba(180, 193, 220, 0.2);
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(19, 28, 46, 0.98), rgba(11, 17, 31, 0.98));
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.18);
+}
+
+html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) > .student-enrich {
+  grid-column: 2;
+  grid-row: 4;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  gap: 14px;
+  width: 100%;
+  min-width: 0;
+}
+
+html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) .enrich-card {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid rgba(180, 193, 220, 0.2);
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(19, 28, 46, 0.98), rgba(11, 17, 31, 0.98));
+}
+
+html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) > .student-two-col {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 2px;
+}
+
+html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) > .student-two-col > .student-panel-card {
+  min-width: 0;
+  border: 1px solid rgba(180, 193, 220, 0.2);
+  border-radius: 18px;
+  background: rgba(13, 20, 35, 0.94);
+}
+
+@media (max-width: 1050px) {
+  html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) > .student-dashboard-discover,
+  html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) > .student-enrich {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) > .student-enrich {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) .enrich-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) {
+    gap: 16px;
+    padding: 20px 16px 36px;
+  }
+
+  html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) > .student-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) > .student-enrich,
+  html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) > .student-two-col {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) .enrich-card:last-child {
+    grid-column: auto;
+  }
+
+  html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) > .student-hero {
+    min-height: auto;
+    padding: 24px 20px;
+  }
+
+  html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) .student-hero-avatars {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:not(.classic-overview) .student-main .student-view > section:has(> .student-hero) * {
+    scroll-behavior: auto !important;
+  }
+}

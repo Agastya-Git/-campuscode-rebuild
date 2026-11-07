@@ -1,0 +1,24 @@
+/* Warm CampusCode color haze behind the student workspace. */
+.student-panel {
+  background-color: #080d18 !important;
+  background-image:
+    radial-gradient(ellipse at 9% 10%, rgba(255, 103, 91, 0.08), transparent 30%),
+    radial-gradient(ellipse at 87% 8%, rgba(248, 238, 220, 0.08), transparent 27%),
+    linear-gradient(145deg, #090e19 0%, #0b1020 56%, #080d18 100%) !important;
+}
+
+.student-panel .student-main {
+  background-color: #090e19 !important;
+  background-image:
+    radial-gradient(ellipse at 88% 2%, rgba(248, 238, 220, 0.085), transparent 26%),
+    radial-gradient(ellipse at 8% 36%, rgba(255, 103, 91, 0.075), transparent 28%),
+    radial-gradient(ellipse at 76% 82%, rgba(255, 143, 115, 0.045), transparent 25%),
+    linear-gradient(145deg, #090e19 0%, #0b1020 58%, #090e19 100%) !important;
+  background-attachment: fixed !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .student-panel .student-main {
+    background-attachment: scroll !important;
+  }
+}

@@ -18,6 +18,11 @@ window.fetch = async function(url, options = {}) {
   const urlStr = String(url);
   const method = (options.method || 'GET').toUpperCase();
 
+  // `?api=live` bypasses the local Round 2 mock routes for API comparison.
+  if (new URLSearchParams(window.location.search).get('api') === 'live') {
+    return _originalFetch(url, options);
+  }
+
   // Captcha endpoint
   if (urlStr.includes('/auth/captcha')) {
     return new Response(JSON.stringify({
