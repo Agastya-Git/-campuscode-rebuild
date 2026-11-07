@@ -993,3 +993,221 @@ p, span, small, label,
 .footer-bottom {
   border-color: var(--r2-glass-border) !important;
 }
+
+
+/* ==========================================================================
+   USER-REQUESTED FIXES (LOGO, BUILD TOGETHER, VIDEO BORDER, NETWORK CC, DASHBOARD)
+   ========================================================================== */
+
+/* 1. Landing Dashboard: Logo visibility & background box match */
+.landing-logo, .landing-brand, .login-brand, .register-brand {
+  background: rgba(14, 21, 38, 0.72) !important;
+  border: 1px solid var(--r2-glass-border) !important;
+  backdrop-filter: blur(16px) !important;
+  border-radius: 12px !important;
+  padding: 8px 16px !important;
+}
+
+.landing-logo strong, .landing-brand strong {
+  color: #ffffff !important;
+  font-size: 14px !important;
+  font-weight: 900 !important;
+  letter-spacing: 1.5px !important;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.4) !important;
+}
+
+.landing-logo small, .landing-brand small {
+  color: var(--r2-coral-vivid) !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+}
+
+/* 2. "Build Together" / About Section Overhaul (High contrast cream text & design match) */
+.landing-about, .about-grid {
+  background: rgba(8, 12, 22, 0.8) !important;
+  border-bottom: 1px solid var(--r2-glass-border) !important;
+}
+
+.about-content h2 {
+  color: var(--r2-cream-luminous) !important;
+  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.9) !important;
+}
+
+.about-content > p {
+  color: var(--r2-cream-body) !important;
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+  opacity: 0.95 !important;
+}
+
+/* 3. Network Section: Center CC Box match canvas background and prominent visibility */
+.about-core {
+  background: rgba(12, 17, 34, 0.95) !important;
+  border: 2px solid var(--r2-coral-vivid) !important;
+  color: var(--r2-cream-luminous) !important;
+  box-shadow: 0 0 40px var(--r2-coral-glow-strong), inset 0 0 20px rgba(255, 84, 71, 0.25) !important;
+  border-radius: 20px !important;
+  font-family: var(--font-heading) !important;
+  font-size: 32px !important;
+  font-weight: 900 !important;
+  z-index: 10 !important;
+}
+
+.about-node {
+  color: var(--r2-cream-body) !important;
+  background: rgba(14, 21, 38, 0.8) !important;
+  border: 1px solid var(--r2-glass-border) !important;
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+  font-family: var(--font-mono) !important;
+}
+
+.about-ring {
+  border-color: rgba(255, 84, 71, 0.28) !important;
+}
+
+/* 4. Animated Glowing Border Around Video Section */
+.landing-video, .experience-film, .video-modal-box {
+  border: 2px solid transparent !important;
+  border-radius: 24px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.8), 0 0 50px var(--r2-coral-ambient) !important;
+  animation: videoGlowPulse 4s infinite alternate ease-in-out !important;
+}
+
+.experience-film {
+  border: 2px solid rgba(255, 84, 71, 0.5) !important;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.8), 0 0 40px var(--r2-coral-ambient) !important;
+  background: #080c16 !important;
+}
+
+.experience-film video {
+  border-radius: 20px !important;
+}
+
+@keyframes videoGlowPulse {
+  0% {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 84, 71, 0.2);
+    border-color: rgba(255, 84, 71, 0.35);
+  }
+  50% {
+    box-shadow: 0 25px 85px rgba(0, 0, 0, 0.9), 0 0 60px rgba(118, 101, 255, 0.35);
+    border-color: rgba(118, 101, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.9), 0 0 55px rgba(255, 84, 71, 0.55);
+    border-color: rgba(255, 84, 71, 0.7);
+  }
+}
+
+.experience-play-badge {
+  background: var(--r2-coral-vivid) !important;
+  border: 2px solid #fff !important;
+  box-shadow: 0 0 30px var(--r2-coral-glow-strong) !important;
+}
+
+/* 5. Complete Student Dashboard Readability & Interactive Polish */
+.student-panel, .student-main, .student-content {
+  background: transparent !important;
+  color: var(--r2-cream-luminous) !important;
+}
+
+/* Ensure ALL texts in student dashboard are clean, crisp, high-contrast cream */
+.student-panel *, .student-main * {
+  text-shadow: none !important;
+}
+
+.student-panel h1, .student-panel h2, .student-panel h3, .student-panel h4,
+.student-hero h1, .student-hero h2, .student-page-heading h1, .student-page-heading h2,
+.current-event h3, .student-panel-title, .student-feature-card h3,
+.student-stat-card strong, .stat-num, .hack-title h3 {
+  color: var(--r2-cream-luminous) !important;
+  font-weight: 800 !important;
+}
+
+.student-panel p, .student-hero p, .student-hero-copy p,
+.student-muted, .student-panel-card p, .student-feature-card p,
+.student-stat-card small, .stat-label, .student-info-list,
+.current-event-meta, .event-facts dt, .event-facts dd {
+  color: var(--r2-cream-body) !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  opacity: 0.95 !important;
+}
+
+/* Dashboard Cards — Sleek Translucent Dark Glass with High-Contrast Text */
+.student-stat-card,
+.student-panel-card,
+.student-feature-card,
+.current-event,
+.hackmate-team-panel,
+.student-leaderboard-card,
+.student-result-card,
+.panel-card,
+.event-banner {
+  background: rgba(14, 21, 38, 0.85) !important;
+  backdrop-filter: blur(28px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(200%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  border-radius: 20px !important;
+  padding: 24px !important;
+  margin-bottom: 20px !important;
+  /* Permanent levitation */
+  transform: translateY(-6px) !important;
+  box-shadow: 
+    0 22px 55px rgba(0, 0, 0, 0.75), 
+    inset 0 1px 1px rgba(255, 255, 255, 0.15), 
+    0 0 35px rgba(255, 84, 71, 0.12) !important;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+}
+
+.student-stat-card:hover,
+.student-panel-card:hover,
+.student-feature-card:hover,
+.current-event:hover {
+  background: rgba(20, 29, 54, 0.95) !important;
+  border-color: var(--r2-coral-vivid) !important;
+  transform: translateY(-12px) scale(1.015) !important;
+  box-shadow: 
+    0 32px 75px rgba(0, 0, 0, 0.9), 
+    0 0 45px var(--r2-coral-glow-strong) !important;
+}
+
+/* Stat numbers pop in Coral */
+.student-stat-card strong, .stat-num {
+  color: var(--r2-coral-vivid) !important;
+  font-size: 34px !important;
+  text-shadow: 0 0 20px var(--r2-coral-glow-strong) !important;
+}
+
+/* Nav item active states in coral with smooth hover animations */
+.student-nav-item {
+  color: var(--r2-cream-body) !important;
+  font-weight: 600 !important;
+}
+
+.student-nav-item:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #fff !important;
+  transform: translateX(6px) !important;
+}
+
+.student-nav-item.active {
+  background: var(--r2-coral-vivid) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 20px var(--r2-coral-glow-strong) !important;
+  border: 1px solid var(--r2-coral-vivid) !important;
+}
+
+/* Tab buttons inside Event Hub */
+.event-hub-tab {
+  color: var(--r2-cream-body) !important;
+  font-weight: 700 !important;
+}
+
+.event-hub-tab.active {
+  background: var(--r2-coral-vivid) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 18px var(--r2-coral-glow-strong) !important;
+}
