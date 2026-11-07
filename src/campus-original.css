@@ -618,3 +618,228 @@ body, html, #root {
   box-shadow: 0 4px 15px var(--r2-coral-glow) !important;
   border-radius: 10px !important;
 }
+
+
+/* ==========================================================================
+   ROUND 2 ENHANCEMENT: INTENSIFIED CREAM & CORAL ATMOSPHERE
+   - Warmer, richer cream surfaces and typography
+   - Vivid coral glows, badges, buttons, borders, and ambient embers
+   - High-contrast cream text replacing dull grey text across all views
+   ========================================================================== */
+
+:root {
+  --r2-coral-vivid: #ff5447;
+  --r2-coral-bright: #ff6e63;
+  --r2-coral-glow-strong: rgba(255, 84, 71, 0.6);
+  --r2-coral-ambient: rgba(255, 84, 71, 0.28);
+  
+  --r2-cream-luminous: #fffefb;
+  --r2-cream-body: #f8f4ec;
+  --r2-cream-warm: #eee6d8;
+  --r2-cream-card-bg: rgba(248, 244, 236, 0.07);
+  --r2-cream-card-hover: rgba(248, 244, 236, 0.12);
+  --r2-cream-border: rgba(248, 244, 236, 0.22);
+}
+
+/* 1. Enhanced Ambient Canvas with intensified warm coral/cream nebula glow */
+.campus-landing, 
+.campus-login, 
+.campus-register, 
+.student-page,
+.student-panel,
+.landing-hero,
+.landing-about,
+.landing-how,
+.landing-hackathons,
+.landing-statement,
+.landing-community,
+.landing-cta,
+.landing-footer {
+  background-image: 
+    radial-gradient(circle at 68% 28%, rgba(255, 84, 71, 0.35) 0%, rgba(255, 84, 71, 0.08) 38%, transparent 68%),
+    radial-gradient(circle at 22% 38%, rgba(120, 140, 200, 0.3) 0%, transparent 52%),
+    radial-gradient(circle at 75% 75%, rgba(255, 110, 99, 0.2) 0%, transparent 55%),
+    linear-gradient(90deg, rgba(248, 244, 236, 0.02) 1px, transparent 1px) !important;
+}
+
+/* 2. Rich Cream Headings & Body Typography */
+h1, h2, h3, h4, strong, b,
+.hero-content h1, 
+.about-content h2, 
+.statement-content h2, 
+.community-left h2, 
+.cta-content h2,
+.section-heading h2,
+.student-hero h1,
+.student-hero h2,
+.student-page-heading h1,
+.student-page-heading h2,
+.login-card h2,
+.register-card h2 {
+  color: var(--r2-cream-luminous) !important;
+}
+
+p, span, small, label,
+.hero-description p, 
+.about-content > p, 
+.statement-content p, 
+.community-right p,
+.section-heading p,
+.student-hero p,
+.student-hero-copy p,
+.student-page-heading p,
+.student-muted,
+.login-intro-description,
+.register-intro-description {
+  color: var(--r2-cream-body) !important;
+}
+
+/* 3. Coral Badges, Tag Pills, and Eyebrows */
+.badge, 
+.section-eyebrow, 
+.section-number,
+.step-number, 
+.hack-number, 
+.login-eyebrow, 
+.login-card-label,
+.register-card-label,
+.sidebar-label,
+.small-label,
+.hero-label,
+.status-pill.status-active,
+.status-pill.active,
+.hack-status i.active,
+.cta-content small,
+.footer-column h4 {
+  color: var(--r2-coral-vivid) !important;
+  text-shadow: 0 0 16px var(--r2-coral-glow-strong) !important;
+}
+
+/* 4. Cream Translucent Cards with Coral Accents and Strong Levitation */
+.step-card, 
+.hackathon-row, 
+.student-stat-card, 
+.student-panel-card, 
+.student-feature-card, 
+.current-event,
+.quiz-stat-card,
+.stat-card {
+  background: var(--r2-cream-card-bg) !important;
+  border: 1px solid var(--r2-cream-border) !important;
+  box-shadow: 
+    0 22px 55px rgba(0, 0, 0, 0.72), 
+    inset 0 1px 1px rgba(255, 255, 255, 0.2), 
+    0 0 35px var(--r2-coral-ambient) !important;
+}
+
+.step-card:hover, 
+.hackathon-row:hover, 
+.student-stat-card:hover, 
+.student-panel-card:hover, 
+.student-feature-card:hover, 
+.current-event:hover {
+  background: var(--r2-cream-card-hover) !important;
+  border-color: var(--r2-coral-vivid) !important;
+  box-shadow: 
+    0 32px 75px rgba(0, 0, 0, 0.85), 
+    0 0 45px var(--r2-coral-glow-strong) !important;
+}
+
+/* 5. Vivid Coral Action Buttons across all screens */
+.landing-join,
+.hero-explore,
+.hero-main-cta,
+.login-submit,
+.register-submit,
+.student-primary-btn,
+.student-join-btn,
+.card-action-btn,
+.aura-btn-coral {
+  background: linear-gradient(135deg, var(--r2-coral-vivid), var(--r2-coral-bright)) !important;
+  color: var(--r2-cream-luminous) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 8px 30px var(--r2-coral-glow-strong) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.5px !important;
+}
+
+.landing-join:hover,
+.hero-explore:hover,
+.hero-main-cta:hover,
+.login-submit:hover:not(:disabled),
+.register-submit:hover:not(:disabled),
+.student-primary-btn:hover,
+.student-join-btn:hover,
+.card-action-btn:hover,
+.aura-btn-coral:hover {
+  background: linear-gradient(135deg, #ff6b60, var(--r2-coral-vivid)) !important;
+  box-shadow: 0 14px 45px rgba(255, 84, 71, 0.8) !important;
+  transform: translateY(-4px) scale(1.02) !important;
+}
+
+/* 6. Outline & Ghost Buttons in Rich Cream Style */
+.hero-secondary-cta,
+.student-outline-btn,
+.login-back,
+.register-back {
+  background: rgba(248, 244, 236, 0.08) !important;
+  border: 1px solid var(--r2-cream-border) !important;
+  color: var(--r2-cream-luminous) !important;
+  backdrop-filter: blur(14px) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4) !important;
+}
+
+.hero-secondary-cta:hover,
+.student-outline-btn:hover,
+.login-back:hover,
+.register-back:hover {
+  background: rgba(248, 244, 236, 0.16) !important;
+  border-color: var(--r2-coral-vivid) !important;
+  color: #fff !important;
+}
+
+/* 7. Input fields in Warm Cream Frosted Glass with Coral Focus Glow */
+.login-input-wrap,
+.register-input-wrap,
+.student-input-wrap {
+  background: rgba(14, 20, 36, 0.75) !important;
+  border: 1px solid var(--r2-cream-border) !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4) !important;
+}
+
+.login-input-wrap:focus-within,
+.register-input-wrap:focus-within {
+  border-color: var(--r2-coral-vivid) !important;
+  box-shadow: 0 0 0 4px var(--r2-coral-ambient), 0 0 25px var(--r2-coral-glow-strong) !important;
+}
+
+.login-input-wrap input,
+.register-input-wrap input {
+  color: var(--r2-cream-luminous) !important;
+}
+
+.login-input-wrap input::placeholder,
+.register-input-wrap input::placeholder {
+  color: rgba(248, 244, 236, 0.45) !important;
+}
+
+/* 8. Active Nav & Switcher Bar Highlights */
+.student-nav-item.active,
+.event-hub-tab.active,
+#rebuild26-switcher .nav-btn.active {
+  background: var(--r2-coral-vivid) !important;
+  color: var(--r2-cream-luminous) !important;
+  border-color: var(--r2-coral-vivid) !important;
+  box-shadow: 0 0 25px var(--r2-coral-glow-strong) !important;
+}
+
+#rebuild26-switcher {
+  border-color: var(--r2-coral-ambient) !important;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.85), 0 0 35px var(--r2-coral-ambient) !important;
+}
+
+#rebuild26-switcher .badge {
+  background: var(--r2-coral-vivid) !important;
+  color: var(--r2-cream-luminous) !important;
+  box-shadow: 0 0 16px var(--r2-coral-glow-strong) !important;
+}
