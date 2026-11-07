@@ -1,62 +1,68 @@
-# CampusCode ReBuild '26 — Dashboard Recreation
+# CampusCode — ReBuild '26 Round 2 Submission
 
-A faithful, desktop-first recreation of the **CampusCode** platform for **ReBuild '26** (Round 1).
+The Round 2 **CampusCode** web platform submission. It brings the public site, student workspace, and organizer/admin tools together in one responsive React application.
 
 ---
 
 ## 🏗️ Project Architecture
 
-This project is built using **React 18** and **Vite**, structured desktop-first to faithfully reproduce the layout, design system, and user flows of CampusCode.
+This project is built with **React** and **Vite**. The app is optimized for desktop and includes responsive layouts for smaller screens.
 
 ```
 campus-rebuild/
 ├── public/                 # Static assets (brand favicon, illustrations)
 ├── src/
-│   ├── assets/             # Icons & graphics
-│   ├── original_runtime.js # Core application runtime & client-side route handlers
-│   ├── campus-original.css # CampusCode design system & typography tokens
-│   ├── mockData.js         # Offline student dataset & hackathon schedule
-│   └── App.jsx             # Root layout & page coordination
-├── index.html              # Entry HTML with official fonts & reviewer quick-bar
-└── package.json            # Dependencies (React, Vite)
+│   ├── assets/             # Local graphics
+│   ├── original_runtime.js # Current application runtime and routes
+│   ├── campus-original.css # Theme, page styles, and motion effects
+│   └── scroll-reveal.js    # Scroll-triggered section and card reveals
+├── public/                 # Static assets
+├── index.html              # App entry point and reviewer quick switcher
+├── package.json            # Scripts and dependencies
+└── package-lock.json       # Locked dependency versions
 ```
 
 ---
 
-## 🎯 4 Core Recreated Pages (Round 1 Scope)
+## ✨ Platform Features
 
-1. **Landing Page (`/`)**:
-   - Three-slashes brand logo (`#111111`, `#7665ff`, `#a8e62e`).
-   - "BUILD. COMPETE. SHIP." typography hierarchy.
-   - Interactive sections: *Where Students Build*, *How We Work*, *Recent Hackathons*, and *Find Your People*.
+### Public site and account access
 
-2. **Login Page (`/login`)**:
-   - Split layout with *ENTER THE ARENA* background.
-   - Institutional email & password inputs with visibility toggle.
-   - Dynamic captcha verification code with refresh action.
-   - Password reset / OTP recovery flow.
+- Public landing page with CampusCode branding, event discovery, and community information.
+- Student login and registration with CAPTCHA, password visibility controls, and OTP verification.
 
-3. **Register Page (`/register`)**:
-   - *JOIN THE ARENA* onboarding flow.
-   - Student role indicator and 18+ verification agreement.
-   - Captcha check and OTP delivery step.
+### Student workspace (`/student`)
 
-4. **Student Dashboard (`/student`)**:
-   - Sidebar workspace navigation.
-   - **Overview**: Active sprint (*ReBuild '26*), metrics counter, upcoming deadlines, and AI spotlight.
-   - **My Events**: Displays joined events (*ReBuild '26*, *FirstCommit '26 Quiz 2.0*, *FirstCommit '26 Quiz*).
-   - **Events**: Directory of active and upcoming campus competitions.
+- Overview with activity metrics, deadlines, AI tools, and journey progress.
+- Browse events, manage registrations, and connect with potential teammates.
+- IdeaCheck AI and RuleBot AI assistance, certificates, digital ID, student guide, notifications, official communication, and profile tools.
+- Sections reveal with motion, with reduced-motion preferences respected.
+
+### Organizer and admin workspaces
+
+- Role-based organizer and admin routes for event operations and platform management.
 
 ---
 
-## 🛠️ How to Run Locally
+## 🛠️ Run from GitHub
 
-```bash
-# 1. Install dependencies
-npm install
+Clone the repository, install the locked dependencies, and start the Vite development server:
 
-# 2. Start local development server
+```powershell
+git clone https://github.com/Agastya-Git/-campuscode-rebuild.git
+cd .\-campuscode-rebuild
+npm ci
 npm run dev
 ```
 
-Visit `http://localhost:5173` in your browser. Use the quick switcher at the bottom to jump between pages, or walk through the interactive user flow.
+Open the local URL printed by Vite, usually `http://localhost:5173`. Use the reviewer quick switcher at the bottom to move between the public site, account pages, and student workspace.
+
+To update an existing clone, run `git pull origin main` from the project folder before starting the app.
+
+## 📦 Production Build
+
+```bash
+npm run build
+```
+
+Vite writes the production site to `dist/`. This generated folder is ignored by Git; deployment services such as Vercel build it from the tracked source files.
