@@ -1,0 +1,876 @@
+/* ==========================================================================
+   ROUND 2 — AURA GLASSPHORIC DESIGN SYSTEM
+   Palette:
+   - Deep Midnight Navy base: #090d16 / #0e1424
+   - Coral Ember CTA & Accents: #ff5e52 / #ff7262 / rgba(255, 94, 82, 0.2)
+   - Warm Cream typography & soft cards: #fdfbf7 / #ece7df / #d8d2c5
+   - Frosted Translucent Glass: rgba(255, 255, 255, 0.05), blur(24px)
+   - Vertical Shimmer Ribbed texture
+   ========================================================================== */
+
+@import "https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap";
+
+:root {
+  --bg-navy-deep: #080c15;
+  --bg-navy-rich: #0d1322;
+  --bg-navy-card: rgba(18, 26, 44, 0.58);
+  --bg-navy-card-hover: rgba(24, 34, 58, 0.78);
+  
+  --coral: #ff5e52;
+  --coral-glow: rgba(255, 94, 82, 0.45);
+  --coral-soft: rgba(255, 94, 82, 0.12);
+  
+  --cream-pure: #ffffff;
+  --cream-primary: #fbf8f3;
+  --cream-muted: #b9c1d4;
+  --cream-subtle: #7b859e;
+
+  --border-glass: rgba(255, 255, 255, 0.09);
+  --border-glass-bright: rgba(255, 255, 255, 0.18);
+  --border-coral-glow: rgba(255, 94, 82, 0.4);
+
+  --lime-accent: #a8e62e;
+  --purple-accent: #7665ff;
+
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background: var(--bg-navy-deep);
+  color: var(--cream-primary);
+  font-family: var(--font-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Atmospheric Ambient Canvas with Vertical Ribbed Texture like the reference */
+.aura-shell {
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--bg-navy-deep);
+  background-image: 
+    radial-gradient(circle at 62% 40%, rgba(255, 94, 82, 0.22) 0%, rgba(255, 94, 82, 0.04) 40%, transparent 68%),
+    radial-gradient(circle at 18% 28%, rgba(68, 92, 150, 0.28) 0%, transparent 50%),
+    radial-gradient(circle at 85% 85%, rgba(118, 101, 255, 0.14) 0%, transparent 55%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 40px 100%;
+}
+
+/* Glowing Top Pill Navigation */
+.aura-header {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4vw;
+  pointer-events: none;
+}
+
+.aura-header > * {
+  pointer-events: auto;
+}
+
+.aura-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(14, 20, 35, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.aura-brand:hover {
+  border-color: var(--border-glass-bright);
+  background: rgba(22, 30, 52, 0.8);
+  transform: translateY(-1px);
+}
+
+.brand-slashes {
+  display: flex;
+  gap: 3px;
+  transform: skew(-18deg);
+}
+
+.brand-slashes span {
+  display: inline-block;
+  width: 5px;
+  height: 20px;
+  border-radius: 1px;
+}
+.brand-slashes span:nth-child(1) { background: #fff; }
+.brand-slashes span:nth-child(2) { background: var(--purple-accent); }
+.brand-slashes span:nth-child(3) { background: var(--lime-accent); }
+
+.brand-label {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  color: var(--cream-primary);
+}
+
+.brand-tag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--coral);
+  letter-spacing: 1px;
+  padding-left: 4px;
+}
+
+/* Floating Center Nav Capsule */
+.aura-nav-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(14, 20, 35, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-glass);
+  padding: 6px 8px;
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.aura-nav-pill button {
+  background: transparent;
+  border: none;
+  color: var(--cream-muted);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.aura-nav-pill button:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.aura-nav-pill button.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.aura-auth-btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.aura-btn-ghost {
+  background: rgba(14, 20, 35, 0.65);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  color: var(--cream-primary);
+  padding: 9px 20px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.aura-btn-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(24, 34, 58, 0.85);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.aura-btn-coral {
+  background: var(--coral);
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 20px var(--coral-glow);
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.aura-btn-coral:hover {
+  background: #ff7468;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 28px rgba(255, 94, 82, 0.6);
+}
+
+/* ==========================================================================
+   LANDING HERO VIEW
+   ========================================================================== */
+.aura-hero-stage {
+  padding: 140px 6vw 60px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.aura-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 5vw;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.aura-tag-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--coral-soft);
+  border: 1px solid rgba(255, 94, 82, 0.3);
+  color: var(--coral);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+}
+
+.aura-tag-chip .pulsing-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--coral);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--coral);
+  animation: pulseAura 2s infinite;
+}
+
+@keyframes pulseAura {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.aura-headline {
+  font-family: var(--font-heading);
+  font-size: clamp(52px, 6.2vw, 92px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -1.5px;
+  color: var(--cream-primary);
+  margin-bottom: 24px;
+}
+
+.aura-headline .coral-serif {
+  color: var(--coral);
+  font-style: italic;
+  font-weight: 400;
+  text-shadow: 0 0 40px rgba(255, 94, 82, 0.4);
+}
+
+.aura-subtext {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--cream-muted);
+  max-width: 520px;
+  margin-bottom: 36px;
+}
+
+.aura-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+/* Floating Glass Orbit Card on the Right (Hovering Hero Card) */
+.aura-floating-card {
+  background: var(--bg-navy-card);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid var(--border-glass-bright);
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 50px rgba(255, 94, 82, 0.12);
+  position: relative;
+  transform: perspective(1000px) rotateY(-4deg) rotateX(2deg);
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.aura-floating-card:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(-8px);
+  border-color: var(--border-coral-glow);
+  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.7), 0 0 60px rgba(255, 94, 82, 0.25);
+}
+
+.card-location-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: var(--cream-subtle);
+  font-family: var(--font-mono);
+}
+
+.glass-item-row {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-glass);
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  transition: all 0.25s ease;
+}
+
+.glass-item-row:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--border-glass-bright);
+}
+
+.item-row-title {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 15px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.item-row-dates {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--cream-muted);
+}
+
+.item-row-dates strong {
+  color: var(--cream-primary);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.coral-badge-pill {
+  display: inline-block;
+  background: var(--coral-soft);
+  color: var(--coral);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-top: 14px;
+}
+
+/* Bottom Bar Features in the reference (Hand-picked, Two hours, etc.) */
+.aura-bottom-strip {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 32px;
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.strip-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.strip-item span {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cream-primary);
+}
+
+.strip-item small {
+  font-size: 13px;
+  color: var(--cream-subtle);
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   INTERACTIVE SECTIONS & GRIDS (HACKATHONS, HOW IT WORKS)
+   ========================================================================== */
+.aura-section {
+  padding: 90px 6vw;
+  position: relative;
+}
+
+.aura-section-header {
+  margin-bottom: 50px;
+}
+
+.aura-section-header .section-sup {
+  font-family: var(--font-mono);
+  color: var(--coral);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.aura-section-header h2 {
+  font-family: var(--font-heading);
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--cream-primary);
+}
+
+.aura-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 28px;
+}
+
+.aura-glass-card {
+  background: var(--bg-navy-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+  border-radius: 20px;
+  padding: 28px;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.aura-glass-card:hover {
+  background: var(--bg-navy-card-hover);
+  border-color: var(--border-glass-bright);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 94, 82, 0.15);
+}
+
+.card-status-chip {
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(168, 230, 46, 0.15);
+  color: var(--lime-accent);
+  border: 1px solid rgba(168, 230, 46, 0.3);
+  margin-bottom: 14px;
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+  font-family: var(--font-heading);
+}
+
+.card-desc {
+  font-size: 14px;
+  color: var(--cream-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.card-tag {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 11px;
+  color: var(--cream-muted);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.card-footer-action {
+  border-top: 1px solid var(--border-glass);
+  padding-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-prize-val small {
+  font-size: 10px;
+  color: var(--cream-subtle);
+  display: block;
+}
+
+.card-prize-val strong {
+  font-size: 16px;
+  color: #fff;
+}
+
+/* ==========================================================================
+   AUTHENTICATION SCREENS (LOGIN & REGISTER)
+   ========================================================================== */
+.aura-auth-stage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 24px 80px;
+}
+
+.aura-auth-container {
+  width: 100%;
+  max-width: 480px;
+  background: var(--bg-navy-card);
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  border: 1px solid var(--border-glass-bright);
+  border-radius: 28px;
+  padding: 44px 38px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 50px rgba(255, 94, 82, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.aura-auth-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--coral), var(--purple-accent), var(--lime-accent));
+}
+
+.auth-header-block {
+  margin-bottom: 30px;
+}
+
+.auth-header-block h2 {
+  font-family: var(--font-heading);
+  font-size: 30px;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.auth-header-block p {
+  color: var(--cream-muted);
+  font-size: 14px;
+}
+
+.auth-form-group {
+  margin-bottom: 20px;
+}
+
+.auth-form-group label {
+  display: block;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--cream-muted);
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.auth-input-wrapper {
+  background: rgba(10, 14, 25, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  transition: all 0.25s ease;
+}
+
+.auth-input-wrapper:focus-within {
+  border-color: var(--coral);
+  box-shadow: 0 0 0 3px var(--coral-soft);
+  background: rgba(14, 20, 36, 0.95);
+}
+
+.auth-input-wrapper input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  padding: 14px 0;
+  font-family: inherit;
+}
+
+.auth-input-wrapper input::placeholder {
+  color: #5d6785;
+}
+
+.auth-submit-btn {
+  width: 100%;
+  background: var(--coral);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 15px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 25px var(--coral-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+  transition: all 0.25s ease;
+}
+
+.auth-submit-btn:hover {
+  background: #ff7367;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(255, 94, 82, 0.6);
+}
+
+.auth-switch-link {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 13px;
+  color: var(--cream-muted);
+}
+
+.auth-switch-link button {
+  background: transparent;
+  border: none;
+  color: var(--coral);
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+.auth-switch-link button:hover {
+  text-decoration: underline;
+}
+
+/* Captcha interactive element */
+.captcha-container-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.captcha-display-bubble {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 4px;
+  color: var(--lime-accent);
+}
+
+/* ==========================================================================
+   STUDENT DASHBOARD WORKSPACE (MODERN GLASS CONTROL PANEL)
+   ========================================================================== */
+.aura-dashboard-shell {
+  padding: 120px 5vw 60px;
+  min-height: 100vh;
+}
+
+.aura-dashboard-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 32px;
+}
+
+.aura-dash-sidebar {
+  background: var(--bg-navy-card);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-glass);
+  border-radius: 24px;
+  padding: 24px;
+  height: fit-content;
+}
+
+.dash-user-profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-glass);
+  margin-bottom: 20px;
+}
+
+.avatar-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--coral), var(--purple-accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: #fff;
+  font-size: 18px;
+}
+
+.dash-nav-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dash-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: none;
+  color: var(--cream-muted);
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.dash-nav-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dash-nav-btn.active {
+  background: rgba(255, 94, 82, 0.12);
+  color: var(--coral);
+  font-weight: 700;
+  border: 1px solid rgba(255, 94, 82, 0.25);
+}
+
+.aura-dash-main {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.dash-welcome-banner {
+  background: linear-gradient(135deg, rgba(255, 94, 82, 0.15), rgba(118, 101, 255, 0.15)), var(--bg-navy-card);
+  backdrop-filter: blur(28px);
+  border: 1px solid var(--border-glass-bright);
+  border-radius: 24px;
+  padding: 36px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dash-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.dash-stat-glass-card {
+  background: var(--bg-navy-card);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+  border-radius: 18px;
+  padding: 22px;
+  transition: all 0.25s ease;
+}
+
+.dash-stat-glass-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-glass-bright);
+}
+
+.dash-stat-glass-card small {
+  font-size: 12px;
+  color: var(--cream-subtle);
+  font-family: var(--font-mono);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.dash-stat-glass-card strong {
+  font-size: 28px;
+  font-family: var(--font-heading);
+  color: #fff;
+}
+
+/* Bottom Swapper Bar */
+.aura-switch-floater {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  background: rgba(8, 12, 21, 0.88);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 94, 82, 0.2);
+  border-radius: 999px;
+  padding: 6px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.aura-switch-floater .badge-pill {
+  background: var(--coral);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.aura-switch-floater button {
+  background: transparent;
+  border: none;
+  color: var(--cream-muted);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.aura-switch-floater button:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.aura-switch-floater button.active {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 900px) {
+  .aura-hero-grid, .aura-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  .aura-bottom-strip, .dash-stats-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .aura-nav-pill {
+    display: none;
+  }
+}
