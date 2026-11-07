@@ -843,3 +843,153 @@ p, span, small, label,
   color: var(--r2-cream-luminous) !important;
   box-shadow: 0 0 16px var(--r2-coral-glow-strong) !important;
 }
+
+
+/* ==========================================================================
+   PERFECTION POLISH: UNIFIED NAVY, CREAM & CORAL HARMONY + TILTED AUTH CARDS
+   - Purges low-contrast grey (#777, #666, #999) into crisp warm cream & coral
+   - Introduces perspective 3D tilted auth cards with interactive hover leveling
+   - Eliminates legacy light-mode card backgrounds (#fafaf7, #fafaf8, #fff)
+   - Harmonizes all badges, tables, borders, and input placeholders
+   ========================================================================== */
+
+/* 1. Tilted 3D Holographic Auth Cards (Login & Register) */
+.login-card, .register-card {
+  transform: perspective(1200px) rotateY(-4deg) rotateX(2deg) translateY(-8px) !important;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease, border-color 0.4s ease !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 
+    0 35px 90px rgba(0, 0, 0, 0.85), 
+    inset 0 1.5px 1.5px rgba(255, 255, 255, 0.25), 
+    0 0 50px rgba(255, 84, 71, 0.25) !important;
+}
+
+.login-card:hover, .register-card:hover {
+  transform: perspective(1200px) rotateY(0deg) rotateX(0deg) translateY(-14px) scale(1.015) !important;
+  border-color: var(--r2-coral-vivid) !important;
+  box-shadow: 
+    0 45px 110px rgba(0, 0, 0, 0.9), 
+    inset 0 2px 2px rgba(255, 255, 255, 0.35), 
+    0 0 70px rgba(255, 84, 71, 0.5) !important;
+}
+
+/* 2. Fix Unclear/Low-Contrast Greys Across All Pages */
+.hero-top-line, 
+.hero-bottom, 
+.landing-marquee, 
+.marquee-track, 
+.hero-description p, 
+.step-card p, 
+.hackathon-row p, 
+.hack-number, 
+.statement-content p, 
+.community-right p,
+.footer-brand p, 
+.footer-column a, 
+.footer-status, 
+.footer-bottom,
+.login-card-top p,
+.login-card-index,
+.login-system-info,
+.login-bottom,
+.register-system-info,
+.register-card-description,
+.register-info-card p,
+.student-muted,
+.stat-label,
+.event-facts dt,
+.event-facts dd {
+  color: var(--r2-cream-body) !important;
+  opacity: 0.92;
+}
+
+/* 3. Eliminate Off-Color Backgrounds & Light Boxes */
+.landing-marquee {
+  background: rgba(14, 21, 38, 0.7) !important;
+  border-color: var(--r2-glass-border) !important;
+}
+
+.marquee-track b {
+  color: var(--r2-coral-vivid) !important;
+  text-shadow: 0 0 12px var(--r2-coral-glow-strong);
+}
+
+.about-core {
+  background: rgba(14, 21, 38, 0.85) !important;
+  border-color: var(--r2-coral-vivid) !important;
+  color: var(--r2-coral-vivid) !important;
+  box-shadow: 0 0 35px var(--r2-coral-ambient) !important;
+}
+
+.video-center strong {
+  color: var(--r2-cream-luminous) !important;
+}
+
+.video-center button {
+  background: var(--r2-coral-vivid) !important;
+  border-color: var(--r2-coral-vivid) !important;
+  color: #fff !important;
+  box-shadow: 0 0 25px var(--r2-coral-glow-strong) !important;
+}
+
+/* 4. Captcha Badge & Code Displays in Warm Glow */
+.captcha-display-badge, 
+.login-captcha-img,
+.captcha-container-box {
+  background: rgba(10, 15, 28, 0.85) !important;
+  border: 1px dashed rgba(255, 84, 71, 0.4) !important;
+  color: var(--r2-coral-vivid) !important;
+  box-shadow: 0 0 15px rgba(255, 84, 71, 0.15) !important;
+}
+
+.captcha-display-badge span,
+.login-captcha-img svg text {
+  color: var(--r2-coral-vivid) !important;
+  font-weight: 800 !important;
+  letter-spacing: 4px !important;
+}
+
+.captcha-refresh-btn {
+  background: rgba(248, 244, 236, 0.08) !important;
+  border: 1px solid var(--r2-cream-border) !important;
+  color: var(--r2-cream-luminous) !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+.captcha-refresh-btn:hover {
+  background: rgba(255, 84, 71, 0.2) !important;
+  border-color: var(--r2-coral-vivid) !important;
+  color: #fff !important;
+}
+
+.captcha-input {
+  background: rgba(10, 15, 28, 0.8) !important;
+  border: 1px solid var(--r2-cream-border) !important;
+  color: var(--r2-cream-luminous) !important;
+  border-radius: 8px !important;
+}
+
+.captcha-input:focus {
+  border-color: var(--r2-coral-vivid) !important;
+  box-shadow: 0 0 0 3px var(--r2-coral-ambient) !important;
+}
+
+/* 5. Clean Footer Harmony with Zero Watermark Clashing */
+.footer-watermark, .statement-watermark {
+  color: rgba(255, 255, 255, 0.02) !important;
+}
+
+.footer-column h4 {
+  color: var(--r2-coral-vivid) !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+}
+
+.footer-column a:hover {
+  color: var(--r2-coral-vivid) !important;
+}
+
+.footer-bottom {
+  border-color: var(--r2-glass-border) !important;
+}
