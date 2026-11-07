@@ -1211,3 +1211,299 @@ p, span, small, label,
   color: #ffffff !important;
   box-shadow: 0 4px 18px var(--r2-coral-glow-strong) !important;
 }
+
+
+/* ================================================================
+   FIX: Student Dashboard White Cards → Deep Navy Glass
+   Applied: white hackathon-card, registration-card, match-card,
+            inputs, selects, toolbar, notification bar
+   ================================================================ */
+
+/* ---------- Hackathon Cards (Explore / Join screen) ---------- */
+.hackathon-card {
+  background: rgba(10, 16, 32, 0.90) !important;
+  backdrop-filter: blur(32px) saturate(220%) !important;
+  -webkit-backdrop-filter: blur(32px) saturate(220%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.13) !important;
+  border-radius: 22px !important;
+  color: var(--r2-cream-luminous) !important;
+  transform: translateY(-6px) !important;
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.80),
+    inset 0 1px 1px rgba(255, 255, 255, 0.12),
+    0 0 36px rgba(255, 84, 71, 0.08) !important;
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+.hackathon-card::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 60%) !important;
+  pointer-events: none !important;
+  border-radius: inherit !important;
+}
+.hackathon-card:hover {
+  background: rgba(18, 27, 54, 0.97) !important;
+  border-color: var(--r2-coral-vivid) !important;
+  transform: translateY(-12px) scale(1.025) !important;
+  box-shadow:
+    0 36px 80px rgba(0, 0, 0, 0.92),
+    0 0 50px rgba(255, 84, 71, 0.40),
+    inset 0 1px 1px rgba(255, 255, 255, 0.18) !important;
+}
+
+/* ---------- Registration Cards (My Events screen) ---------- */
+.registration-card {
+  background: rgba(10, 16, 32, 0.90) !important;
+  backdrop-filter: blur(32px) saturate(220%) !important;
+  -webkit-backdrop-filter: blur(32px) saturate(220%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.13) !important;
+  border-radius: 22px !important;
+  color: var(--r2-cream-luminous) !important;
+  transform: translateY(-6px) !important;
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.80),
+    inset 0 1px 1px rgba(255, 255, 255, 0.12) !important;
+  transition: all 0.35s ease !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+.registration-card:hover {
+  background: rgba(18, 27, 54, 0.97) !important;
+  border-color: var(--r2-coral-vivid) !important;
+  transform: translateY(-12px) !important;
+  box-shadow:
+    0 36px 80px rgba(0, 0, 0, 0.92),
+    0 0 50px rgba(255, 84, 71, 0.40) !important;
+}
+
+/* ---------- Grid containers must be transparent ---------- */
+.hackathon-grid,
+.registration-grid,
+.student-discover-grid {
+  background: transparent !important;
+}
+
+/* ---------- All text inside hackathon-card ---------- */
+.hackathon-card h2,
+.hackathon-card h3,
+.hackathon-card-brand h2,
+.hackathon-card-brand h3 {
+  color: var(--r2-cream-luminous) !important;
+  font-weight: 800 !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+}
+.hackathon-card p,
+.hackathon-card span,
+.hackathon-card small,
+.hackathon-card b,
+.hackathon-card-top,
+.hackathon-card-top span,
+.hackathon-card-top b,
+.hackathon-data,
+.hackathon-data span,
+.hackathon-data small,
+.hackathon-data strong,
+.hackathon-data label {
+  color: var(--r2-cream-body) !important;
+}
+.hackathon-card-top {
+  color: var(--r2-cream-muted) !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* ---------- All text inside registration-card ---------- */
+.registration-card h2,
+.registration-card h3,
+.registration-card strong {
+  color: var(--r2-cream-luminous) !important;
+  font-weight: 800 !important;
+}
+.registration-card p,
+.registration-card span,
+.registration-card small,
+.registration-card label {
+  color: var(--r2-cream-body) !important;
+}
+
+/* ---------- Hackathon actions buttons ---------- */
+.hackathon-actions button:not([class*="coral"]):not([class*="primary"]) {
+  background: rgba(255, 255, 255, 0.07) !important;
+  border: 1px solid rgba(255, 255, 255, 0.20) !important;
+  color: var(--r2-cream-luminous) !important;
+  border-radius: 10px !important;
+}
+.hackathon-actions button:not([class*="coral"]):not([class*="primary"]):hover {
+  background: rgba(255, 255, 255, 0.14) !important;
+  border-color: var(--r2-coral-vivid) !important;
+}
+
+/* ---------- Rulebot / Find Your Team Page ---------- */
+.rulebot-page {
+  background: transparent !important;
+}
+
+/* ---------- HackMate Search Toolbar ---------- */
+.hackmate-toolbar {
+  background: rgba(10, 16, 32, 0.88) !important;
+  backdrop-filter: blur(24px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 18px !important;
+  color: var(--r2-cream-luminous) !important;
+}
+
+/* ---------- Match Cards (HackMate results) ---------- */
+.match-card {
+  background: rgba(10, 16, 32, 0.90) !important;
+  backdrop-filter: blur(28px) saturate(200%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.13) !important;
+  border-radius: 18px !important;
+  color: var(--r2-cream-luminous) !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.75), inset 0 1px 1px rgba(255,255,255,0.10) !important;
+  transition: all 0.3s ease !important;
+}
+.match-card:hover {
+  border-color: var(--r2-coral-vivid) !important;
+  transform: translateY(-10px) !important;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.90), 0 0 40px rgba(255,84,71,0.35) !important;
+}
+.match-card h3, .match-card-topline { color: var(--r2-cream-luminous) !important; }
+.match-card p, .match-card span { color: var(--r2-cream-body) !important; }
+.hackmate-team-strip {
+  background: rgba(10, 16, 32, 0.85) !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+  border-radius: 14px !important;
+  color: var(--r2-cream-body) !important;
+}
+
+/* ---------- ALL Inputs / Selects / Textareas in Student Dashboard ---------- */
+.student-panel input,
+.student-panel select,
+.student-panel textarea,
+.student-data-select,
+.student-team-name-input,
+.student-round-form input,
+.student-round-form select,
+.student-round-form textarea,
+.hackmate-toolbar input,
+.hackmate-toolbar select,
+.rulebot-page input,
+.rulebot-page select {
+  background: rgba(6, 10, 22, 0.90) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  color: var(--r2-cream-luminous) !important;
+  border-radius: 10px !important;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+.student-panel input:focus,
+.student-panel select:focus,
+.student-panel textarea:focus,
+.student-data-select:focus,
+.hackmate-toolbar input:focus,
+.rulebot-page input:focus {
+  border-color: var(--r2-coral-vivid) !important;
+  box-shadow: 0 0 0 3px rgba(255, 84, 71, 0.22) !important;
+  outline: none !important;
+}
+.student-panel input::placeholder,
+.student-panel textarea::placeholder,
+.hackmate-toolbar input::placeholder,
+.rulebot-page input::placeholder {
+  color: rgba(248, 244, 236, 0.38) !important;
+}
+/* Select option text in dark mode */
+.student-panel select option,
+.student-data-select option,
+.hackmate-toolbar select option,
+.rulebot-page select option {
+  background: #0d1428 !important;
+  color: var(--r2-cream-luminous) !important;
+}
+
+/* ---------- Notification Bell / Refresh Button Area ---------- */
+.student-top-notification,
+.student-top-actions,
+.student-top-bar button {
+  background: rgba(10, 16, 32, 0.82) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 12px !important;
+  color: var(--r2-cream-luminous) !important;
+  backdrop-filter: blur(16px) !important;
+}
+/* The white REFRESH button specifically */
+button[class*="refresh"],
+.student-panel button[class*="refresh"] {
+  background: rgba(10, 16, 32, 0.82) !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+  color: var(--r2-cream-body) !important;
+  border-radius: 10px !important;
+}
+
+/* ---------- Student Form / Round Workspace Cards ---------- */
+.student-form-card,
+.student-round-form-card,
+.student-round-workspace,
+.student-team-create-card,
+.student-team-main-card,
+.student-team-history-card {
+  background: rgba(10, 16, 32, 0.88) !important;
+  backdrop-filter: blur(28px) saturate(200%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.13) !important;
+  border-radius: 20px !important;
+  color: var(--r2-cream-luminous) !important;
+  transform: translateY(-5px) !important;
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.78),
+    inset 0 1px 1px rgba(255, 255, 255, 0.11) !important;
+}
+
+/* ---------- Digital ID Card ---------- */
+.digital-id-card {
+  background: rgba(10, 16, 32, 0.95) !important;
+  border: 1px solid rgba(255, 84, 71, 0.30) !important;
+  border-radius: 18px !important;
+  color: var(--r2-cream-luminous) !important;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.80), 0 0 30px rgba(255,84,71,0.15) !important;
+}
+
+/* ---------- Build Together / About Section Text ---------- */
+.landing-about .small-label,
+.landing-about .section-number,
+.landing-about .about-node,
+.about-visual .about-node,
+.about-node span,
+.about-node p,
+.landing-build-together p,
+.landing-build-together span,
+.landing-build-together h2,
+.landing-build-together h3,
+.build-together-text,
+[class*="build-together"] p,
+[class*="build-together"] span {
+  color: var(--r2-cream-body) !important;
+}
+
+/* ---------- Catch-all: any article / li / div inside a grid that still shows white ---------- */
+.hackathon-grid > *,
+.registration-grid > *,
+.student-discover-grid > * {
+  background: rgba(10, 16, 32, 0.90) !important;
+  border: 1px solid rgba(255, 255, 255, 0.13) !important;
+  border-radius: 20px !important;
+  color: var(--r2-cream-luminous) !important;
+}
+
+/* ---------- Generic white box catchall for student-panel ---------- */
+.student-panel [style*="background: white"],
+.student-panel [style*="background:#fff"],
+.student-panel [style*="background: #fff"],
+.student-panel [style*="background-color: white"],
+.student-panel [style*="background-color: #fff"] {
+  background: rgba(10, 16, 32, 0.90) !important;
+  color: var(--r2-cream-luminous) !important;
+}
+
+/* ================================================================ */
